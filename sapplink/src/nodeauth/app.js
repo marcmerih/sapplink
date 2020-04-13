@@ -9,7 +9,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var multer = require('multer');
 var flash = require('connect-flash');
 var mongo = require('mongodb');
-var mongoose = requrie('mongoose');
+var mongoose = require('mongoose');
 var db = mongoose.connection;
 
 var indexRouter = require('./routes/index');
