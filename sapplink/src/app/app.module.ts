@@ -23,11 +23,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatRippleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

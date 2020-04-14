@@ -8,7 +8,7 @@ export class FormService {
 
   constructor() { }
 
-  static markFormAsDirty(form: FormGroup | FormArray, updateValue: boolean) {
+  markFormAsDirty(form: FormGroup | FormArray, updateValue: boolean) {
     Object.keys(form.controls).forEach(field => {
       const control = form.get(field) as FormGroup;
       if (control) {
