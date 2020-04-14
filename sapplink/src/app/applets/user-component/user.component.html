@@ -9,23 +9,12 @@
         <div class="col-md-12">
             <app-login [shouldLogin]="userShouldLogin"
             [formGroup]="loginForm"
-            (clickToRegister)="requestLogin($event)"></app-login>
+            (requestToSwitchForm)="requestLogin($event)"></app-login>
 
             <app-register [shouldRegister]="!userShouldLogin"
             [formGroup]="registerForm"
-            (clickToLogin)="requestLogin($event)"
+            (requestToSwitchForm)="requestLogin($event)"
             ></app-register>
         </div>
-        <form [formGroup]="">
-
-
-            <div class="col-md-12" *ngIf="!userShouldLogin">
-                <input type="text" id="registerComponent-emailForm" placeholder="Email">
-                <input type="password" id="registerComponent-passwordForm" placeholder="Password">
-                <input type="text" id="registerComponent-emailForm" placeholder="Confirm Password">
-                <button type="submit" id="registerComponent-submitButton">Register</button>
-                <span class="col-md-12">If you already have an account, <a href="#" (click)="requestLogin(true)">click here to login</a>.</span>
-            </div>
-        </form>
     </div>
 </div>

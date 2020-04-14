@@ -20,15 +20,13 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit() {
-  }
-
   get loginOrRegister() {
     return (this.userShouldLogin) ? 'Login' : 'Register';
   }
 
-  requestLogin(bool: boolean) {
-    this.userShouldLogin = bool;
+  // true represents register, false represents login
+  requestLogin($event) {
+    this.userShouldLogin = !$event;
   }
 
 }

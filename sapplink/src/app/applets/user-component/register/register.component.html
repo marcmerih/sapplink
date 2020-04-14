@@ -1,6 +1,11 @@
-<form class="col-md-12" *ngIf="userShouldLogin" [formGroup]="formGroup">
-    <input type="text" id="loginComponent-emailForm" placeholder="Email">
-    <input type="password" id="loginComponent-passwordForm" placeholder="Password">
-    <button type="submit" id="registerComponent-submitButton">Register</button>
-    <span class="col-md-12">If you don't have an account, <a href="#" (click)="requestLogin(false)">click here to register</a>.</span>
+<form class="col-md-12" *ngIf="shouldRegister" [formGroup]="formGroup">
+    <div>
+        <mat-form-field>
+            <input mat-input type="text" id="loginComponent-emailForm" placeholder="Email" formControlName="email">
+        </mat-form-field>
+        <input type="password" id="loginComponent-passwordForm" placeholder="Password" formControlName="password">
+        <input type="password" id="loginComponent-confirmPasswordForm" placeholder="Confirm Password">
+        <button type="submit" id="registerComponent-submitButton">Register</button>
+        <span class="col-md-12">If you already have an account, <a href="#" (click)="requestLogin()">click here to login</a>.</span>
+    </div>
 </form>

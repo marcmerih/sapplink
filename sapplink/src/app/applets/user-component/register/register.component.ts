@@ -10,10 +10,15 @@ export class RegisterComponent implements OnInit {
   @Input() formGroup: FormGroup;
   @Input() shouldRegister: boolean;
 
-  @Output() clickToLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() requestToSwitchForm: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  requestLogin() {
+    // false emit means user wants to login
+    this.requestToSwitchForm.emit(false);
   }
 
 }

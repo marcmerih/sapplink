@@ -1,6 +1,6 @@
-<form class="col-md-12" *ngIf="userShouldLogin" [formGroup]="formGroup">
-    <input type="text" id="loginComponent-emailForm" placeholder="Email">
-    <input type="password" id="loginComponent-passwordForm" placeholder="Password">
-    <button type="submit" id="registerComponent-submitButton">Register</button>
-    <span class="col-md-12">If you don't have an account, <a href="#" (click)="requestLogin(false)">click here to register</a>.</span>
+<form class="col-md-12" *ngIf="shouldLogin" [formGroup]="formGroup">
+    <input type="text" id="loginComponent-emailForm" placeholder="Email" formControlName="email">
+    <input type="password" id="loginComponent-passwordForm" placeholder="Password" formControlName="password">
+    <button type="submit" id="registerComponent-submitButton">Login</button>
+    <span class="col-md-12">If you don't have an account, <a href="#" (click)="requestRegister()">click here to register</a>.</span>
 </form>
