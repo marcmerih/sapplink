@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormService } from 'src/app/services/form.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class RegisterComponent implements OnInit {
   @Input() formGroup: FormGroup;
@@ -15,7 +16,6 @@ export class RegisterComponent implements OnInit {
   constructor(private formService: FormService) { }
 
   ngOnInit(): void {
-    this.formGroup.get('email').markAsTouched();
   }
   
   requestLogin() {
@@ -27,6 +27,10 @@ export class RegisterComponent implements OnInit {
     if (this.formGroup.invalid) {
       this.formService.markFormAsDirty(this.formGroup, false);
     }
+  }
+
+  hasError(form: FormGroup, field: string): boolean {
+    return this.formService.hasError(form, field);
   }
 
 }

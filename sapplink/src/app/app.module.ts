@@ -1,12 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {
-  MatButtonModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatRippleModule,
-  BrowserAnimationsModule
-} from '../../../node_modules/angular-material';
 import { AppComponent } from './app.component';
 import { UserComponent } from './applets/user-component/user.component';
 import { LoginComponent } from './applets/user-component/login/login.component';

@@ -24,4 +24,8 @@ export class FormService {
       }
     })
   }
+
+  hasError(form: FormGroup, field: string): boolean {
+    return (form.get(field).hasError('required') && form.get(field).touched);
+  }
 }

@@ -1,0 +1,12 @@
+input, button {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 3px;
+    vertical-align: middle;
+    margin: 15px auto auto auto;
+    width: 20%;
+}
+button {
+    margin: 15px auto !important;
+}

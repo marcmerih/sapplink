@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { FormService } from 'src/app/services/form.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class LoginComponent implements OnInit {
   @Input() formGroup: FormGroup;
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   @Output() requestToSwitchForm: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private formService: FormService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +22,15 @@ export class LoginComponent implements OnInit {
   requestRegister() {
     // true emit means user wants to register.
     this.requestToSwitchForm.emit(true);
+}
+
+  clickLogin() {
+    if (this.formGroup.invalid) {
+      this.formService.markFormAsDirty(this.formGroup, false);
+    }
   }
 
+  hasError(form: FormGroup, field: string): boolean {
+    return this.formService.hasError(form, field);
+  }
 }

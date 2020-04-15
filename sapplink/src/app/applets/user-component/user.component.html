@@ -9,7 +9,8 @@
         <div class="col-md-12">
             <app-login [shouldLogin]="userShouldLogin"
             [formGroup]="loginForm"
-            (requestToSwitchForm)="requestLogin($event)"></app-login>
+            (requestToSwitchForm)="requestLogin($event)"
+            ></app-login>
 
             <app-register [shouldRegister]="!userShouldLogin"
             [formGroup]="registerForm"

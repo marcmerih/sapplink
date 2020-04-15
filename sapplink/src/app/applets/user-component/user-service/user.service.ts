@@ -25,9 +25,9 @@ export class UserService {
 
   getRegisterForm() {
     return fb.group({
-      email: ['', []],
-      password: ['', []],
-      emailVerification: ['', []],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      emailVerification: ['', [Validators.required]],
       uid: ['']
     })
   }

@@ -1,20 +1,12 @@
-<div class="container">
-    <div class="row" *ngIf="shouldRegister">
-        <form [formGroup]="formGroup">
-            <div class="col-md-12 col-sm-3">
-                <input type="text" id="loginComponent-emailForm" placeholder="Email" formControlName="email">
-            </div>
-            <div class="col-md-12 col-sm-3">
-                <input type="password" id="loginComponent-passwordForm" placeholder="Password" formControlName="password">
-            </div>
-            <div class="col-md-12 col-sm-3">
-                <input type="password" id="loginComponent-confirmPasswordForm" placeholder="Confirm Password">
-            </div>
-            <div class="col-md-12 col-sm-3">
-                <button type="submit" id="registerComponent-submitButton" (click)="clickRegister()">Register</button>
-                <br>
-                <span class="col-md-12">If you already have an account, <a href="#" (click)="requestLogin()">click here to login</a>.</span>
-            </div>
-        </form>
-    </div>
-</div>
+<form class="col-md-12" *ngIf="shouldRegister" [formGroup]="formGroup">
+
+    <input type="text" id="registerComponent-emailForm" placeholder="Email" formControlName="email" dirty>
+    <span *ngIf="this.hasError(formGroup, 'email')" id="errorMessage">Error: Email is required</span>
+
+    <input type="password" id="registerComponent-passwordForm" placeholder="Password" formControlName="password" dirty>
+    <span *ngIf="this.hasError(formGroup, 'password')" id="errorMessage">Error: Password is required</span>
+
+    <button type="submit" id="registerComponent-submitButton" (click)="clickRegister()">Login</button>
+    <span class="col-md-12">If you already have an account, <a href="#" (click)="requestLogin()">click here to login</a>.</span>
+
+</form>
