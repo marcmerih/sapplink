@@ -6,7 +6,8 @@ import { LoginComponent } from './applets/user-component/login/login.component';
 import { RegisterComponent } from './applets/user-component/register/register.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IndexComponent } from './applets/index/index/index.component';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
+import { NavigationComponent } from './applets/navigation/navigation.component'
 
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent },
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
     UserComponent,
     LoginComponent,
     RegisterComponent,
-    IndexComponent
+    IndexComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
