@@ -1,12 +1,31 @@
-input, button {
-    display: flex;
-    border: 1px solid gray;
-    border-radius: 3px;
-    padding: 3px;
-    vertical-align: middle;
-    margin: 15px auto auto auto;
-    width: 20%;
+.container {
+    text-align: center;
+    font-family: Economica;
+    font-size: 14pt;
+
+    input {
+        display: flex;
+        padding: 3px;
+        vertical-align: middle;
+        margin: 15px auto auto auto;
+        width: 10em;
+        font-family: Economica;
+        font-size: 14pt;
+    }
+    button {
+        display: block;
+        margin: 15px auto !important;
+        width: 10em !important;
+    }
+    .title {
+        font-family: Work Sans !important;
+        font-weight: 500;
+        font-size: 14pt;
+        left: 50%;
+        text-align: center !important;
+    }
+    button {
+        margin-top: 30px !important;
+    }
 }
-button {
-    margin: 15px auto !important;
-}
+

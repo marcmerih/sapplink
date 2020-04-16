@@ -9,20 +9,13 @@ import { FormService } from 'src/app/services/form.service';
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class LoginComponent implements OnInit {
-  @Input() formGroup: FormGroup;
-  @Input() shouldLogin: boolean;
 
-  @Output() requestToSwitchForm: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() formGroup: FormGroup;
 
   constructor(private formService: FormService) { }
 
   ngOnInit(): void {
   }
-  
-  requestRegister() {
-    // true emit means user wants to register.
-    this.requestToSwitchForm.emit(true);
-}
 
   clickLogin() {
     if (this.formGroup.invalid) {

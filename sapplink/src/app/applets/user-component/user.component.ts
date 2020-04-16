@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user-service/user.service';
 import { FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +15,7 @@ export class UserComponent implements OnInit {
   loginForm: FormGroup;
   registerForm: FormGroup;
 
-  constructor(private userService: UserService) { 
+  constructor(private userService: UserService, private dialog: MatDialog) { 
     this.loginForm = this.userService.getLoginForm();
     this.registerForm = this.userService.getRegisterForm();
   }
@@ -21,9 +23,15 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // true represents register, false represents login
-  requestLogin($event) {
-    this.userShouldLogin = !$event;
+  openRegisterPopup() {
+    this.loginForm.reset();
+    this.dialog.open(RegisterComponent, {
+      autoFocus: false,
+      height: '45vh',
+      width: '50vw',
+      data: this.registerForm
+    }).afterClosed().subscribe(() => {
+      // TO-DO: Session stuff?
+    })
   }
-
 }

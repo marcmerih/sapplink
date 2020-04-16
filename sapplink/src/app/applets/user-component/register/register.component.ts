@@ -1,6 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormService } from 'src/app/services/form.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UserService } from '../user-service/user.service';
 
 @Component({
   selector: 'app-register',
@@ -9,20 +11,17 @@ import { FormService } from 'src/app/services/form.service';
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class RegisterComponent implements OnInit {
-  @Input() formGroup: FormGroup;
-  @Input() shouldRegister: boolean;
+  formGroup: FormGroup;
 
-  @Output() requestToSwitchForm: EventEmitter<boolean> = new EventEmitter<boolean>();
-  constructor(private formService: FormService) { }
+  constructor(private formService: FormService, 
+    private userService: UserService,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      this.formGroup = data
+  }
 
   ngOnInit(): void {
   }
   
-  requestLogin() {
-    // false emit means user wants to login
-    this.requestToSwitchForm.emit(false);
-  }
-
   clickRegister() {
     if (this.formGroup.invalid) {
       this.formService.markFormAsDirty(this.formGroup, false);
@@ -31,6 +30,10 @@ export class RegisterComponent implements OnInit {
 
   hasError(form: FormGroup, field: string): boolean {
     return this.formService.hasError(form, field);
+  }
+
+  passwordsDontMatch(password: string, confirmPassword: string) {
+    return this.userService.passwordsDontMatch(password, confirmPassword) && this.formGroup.get('confirmPassword').touched;
   }
 
 }

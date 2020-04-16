@@ -27,8 +27,16 @@ export class UserService {
     return fb.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
       emailVerification: ['', [Validators.required]],
       uid: ['']
     })
   }
+
+  passwordsDontMatch(password: string, confirmPassword: string) {
+    return (password !== confirmPassword);
+  }
+
+  // TO-DO: Add http calls for registering, logging in, etc.
+
 }
