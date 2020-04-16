@@ -4,8 +4,8 @@ Welcome to the development of the Sapplink website. This website is envisioned, 
 
 Specs:
 
-  1)  UI: HTML5, CSS
-  2)  Logic: Angular 8 Framework (Typescript)
+  1)  Logic: Angular 8 Framework (Typescript)
+  2)  UI: HTML5, CSS, Javascript
   3)  RL: Python - Django Framework
   4)  Database: MongoDB
   5)  Graphics: Adobe Illustrator, Adobe After Effects
