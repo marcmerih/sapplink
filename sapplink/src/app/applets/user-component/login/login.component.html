@@ -1,12 +1,12 @@
 <form class="col-md-12" *ngIf="shouldLogin" [formGroup]="formGroup">
 
     <input type="text" id="loginComponent-emailForm" placeholder="Email" formControlName="email">
-    <span *ngIf="this.hasError(formGroup, 'email')" id="errorMessage">Error: Email is required</span>
+    <span *ngIf="hasError(formGroup, 'email')" id="errorMessage">Error: Email is required</span>
 
     <input type="password" id="loginComponent-passwordForm" placeholder="Password" formControlName="password">
-    <span *ngIf="this.hasError(formGroup, 'password')" id="errorMessage">Error: Password is required</span>
-
+    <span *ngIf="hasError(formGroup, 'password')" id="errorMessage">Error: Password is required</span>
+    <!-- <br> -->
     <button type="submit" id="loginComponent-submitButton" (click)="clickLogin()">Login</button>
-    <span class="col-md-12">If you don't have an account, <a href="#" (click)="requestRegister()">click here to register</a>.</span>
+    <br>
 
 </form>

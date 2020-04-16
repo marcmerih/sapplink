@@ -7,3 +7,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 10pt;
     color: #a94442;
 }
+
+button {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    border-collapse: separate;
+    border-radius: 3px !important;
+    width: 45%;
+    text-align: center !important;
+    padding: 5px;
+    margin: 15px auto 15px auto !important;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+div {
+    margin-top: 5px;
+}

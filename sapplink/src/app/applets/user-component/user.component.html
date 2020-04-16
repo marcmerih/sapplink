@@ -1,22 +1,29 @@
+<!-- <div class="col-md-6">
+    <img src="../../../assets/login_wp.gif" class="login-wp">
+</div> -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 title">
-            <span>{{ loginOrRegister }}</span>
-        </div>
-    </div>
     <br>
     <div class="row">
-        <div class="col-md-12">
-            <img src="../../../assets/login_placer.gif" class="login-wp">
+        <div class="col-md-6">
+            <span class="title">Don't have an account?</span>
+            <br>
+            <span class="prg">
+                By creating an account, you will gain access to tools, services, and exclusives that are launched on the website. As well, you will
+                aquire purchasing power for the shop!
+            </span>
+            <hr>
+            <button type="button">Register</button>
+        </div>
+        <div class="col-md-6">
+            <span class="title">Login</span>
             <app-login [shouldLogin]="userShouldLogin"
             [formGroup]="loginForm"
             (requestToSwitchForm)="requestLogin($event)"
             ></app-login>
-
-            <app-register [shouldRegister]="!userShouldLogin"
-            [formGroup]="registerForm"
-            (requestToSwitchForm)="requestLogin($event)"
-            ></app-register>
         </div>
-    </div>
+
+        <app-register [shouldRegister]="!userShouldLogin"
+        [formGroup]="registerForm"
+        (requestToSwitchForm)="requestLogin($event)"
+        ></app-register>
 </div>

@@ -1,11 +1,22 @@
 .container {
-    text-align: center !important;
+    text-align: center;
     font-family: Economica;
     font-size: 14pt;
-    
-    .login-wp {
-        margin-left: -110px;
-        height: 30%;
+
+    .title {
+        font-family: Work Sans !important;
+        font-weight: 500;
+        left: 50%;
     }
-    
+
+    .prg {
+        text-align: justify !important;
+        font-size: 14pt;
+        margin-top: 10px !important;
+    }
+
+    button {
+        margin-top: 30px !important;
+    }
 }
+
