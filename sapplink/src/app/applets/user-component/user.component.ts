@@ -31,6 +31,7 @@ export class UserComponent implements OnInit {
       width: '50vw',
       data: this.registerForm
     }).afterClosed().subscribe(() => {
+      this.registerForm.reset();
       // TO-DO: Session stuff?
     })
   }

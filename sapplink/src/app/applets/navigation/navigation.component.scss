@@ -1,10 +1,12 @@
 nav {
     display: inline-flex;
     background-color: #0d0c19;
-    height: 6em;
+    height: 9em;
+    min-width: 1100px;
 
     a {
-        margin: 35px;
+        margin-right: 5px;
+        text-align: center;
         color: #f0f0f0;
         font-family: Work Sans;
         font-size: 10pt;
@@ -12,6 +14,15 @@ nav {
 
     .logo {
         height: 100%;
-        margin: auto 5% auto 5%;
+        margin: auto 35% auto 5%;
     }
 }
+@media screen and (max-width: 1100px) {
+    nav {
+        display: inline-flexbox; // this is wrong.
+    }
+    nav a:not(:first-child) {
+        width: 100%;
+        // display: flex;
+    }
+  }
