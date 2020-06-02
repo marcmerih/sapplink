@@ -1,11 +1,12 @@
 <form class="col-md-12" [formGroup]="formGroup">
 
-    <input type="text" id="loginComponent-emailForm" placeholder="Email" formControlName="email">
+    <input type="text" id="loginComponent-emailForm" placeholder="Email" formControlName="email" disabled>
     <span *ngIf="hasError(formGroup, 'email')" id="errorMessage">Error: Email is required</span>
 
-    <input type="password" id="loginComponent-passwordForm" placeholder="Password" formControlName="password">
+    <input type="password" id="loginComponent-passwordForm" placeholder="Password" formControlName="password" disabled>
     <span *ngIf="hasError(formGroup, 'password')" id="errorMessage">Error: Password is required</span>
-    <button type="submit" id="loginComponent-submitButton" (click)="clickLogin()">Login</button>
+    <button type="submit" id="loginComponent-submitButton" (click)="clickLogin()" [disabled]="initialRollout"
+    title="Signing Up / Logging in feature will be made available in the application beta release! Thank you for your patience.">Login</button>
     <br>
 
 </form>

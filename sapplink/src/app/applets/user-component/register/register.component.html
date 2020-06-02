@@ -4,13 +4,13 @@
 
             <span class="title">Register an Account</span>
 
-            <input type="text" id="registerComponent-emailForm" placeholder="Email" formControlName="email" dirty>
+            <input type="text" id="registerComponent-emailForm" placeholder="Email" formControlName="email" dirty disabled>
             <span *ngIf="hasError(formGroup, 'email')" id="errorMessage">Error: Email is required</span>
 
-            <input type="password" id="registerComponent-passwordForm" placeholder="Password" formControlName="password" dirty>
+            <input type="password" id="registerComponent-passwordForm" placeholder="Password" formControlName="password" dirty disabled>
             <span *ngIf="hasError(formGroup, 'password')" id="errorMessage">Error: Password is required</span>
             
-            <input type="password" id="registerComponent-confirmPasswordForm" placeholder="Confirm password" formControlName="confirmPassword" dirty>
+            <input type="password" id="registerComponent-confirmPasswordForm" placeholder="Confirm password" formControlName="confirmPassword" dirty disabled>
             <div>
                 <span *ngIf="hasError(formGroup, 'confirmPassword')" id="errorMessage">Error: Must confirm password</span> 
             </div>
@@ -18,7 +18,8 @@
                 <span *ngIf="passwordsDontMatch(formGroup.get('password').value, formGroup.get('confirmPassword').value)" id="errorMessage">Error: Passwords don't match!</span>   
             </div>
             
-            <button type="submit" id="registerComponent-submitButton" (click)="clickRegister()">Sign Up</button>
+            <button type="submit" id="registerComponent-submitButton" (click)="clickRegister()" [disabled]="initialRollout"
+            title="Signing Up / Logging in feature will be made available in the application beta release! Thank you for your patience.">Sign Up</button>
 
         </form>
     </div>
